@@ -114,3 +114,8 @@ curl 'https://opendata.arcgis.com/api/v3/datasets/9ca3e6b812d1473fb42eafd412a161
   -H 'sec-ch-ua-platform: "macOS"' \
   --compressed \
   --output SanBernardino.zip
+
+
+# For importing to DB:
+# shp2pgsql or ogr2ogr -f "PostgreSQL" PG:"dbname=my_database user=postgres" "source_data.json" -nln destination_table -append
+# not sure which is easier for something like this since many of these are available in both formats. SHP has limits on field names, goejson is huge and slow
